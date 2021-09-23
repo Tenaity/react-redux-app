@@ -2,13 +2,18 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Todos from "./components/Todos";
 
-function App() {
+import { Provider } from "react-redux";
+import store from "./store/store";
+
+const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <Todos />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Navbar />
+        <Todos />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
